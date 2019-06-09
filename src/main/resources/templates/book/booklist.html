@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+    <title>The eLibrary - Book List</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"/>
+
+    <div class="container-fluid">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span>Book List</span></h3>
+            </div>
+            <div id="formContent" class="panel-body">
+
+                <table class="table table-striped">
+                    <thead>
+                    <th>Book ID</th>
+                    <th>Book Title</th>
+                    <th>Fee</th>
+                    <th>Published Date</th>
+                    <th>Actions</th>
+                    </thead>
+                    <tbody>
+                    <tr th:each="book : ${books}">
+                        <td th:text="${book.bookId}"></td>
+                        <td th:text="${book.title}"></td>
+                        <td th:text="${book.fee}"></td>
+                        <td th:text="${book.datePublished}"></td>
+                        <td>
+                            <a th:href="${'/elibrary/book/' + book.bookId}" class="btn btn-info">Edit</a>&nbsp;
+                            <a th:href="${'/elibrary/book/delete/' + book.bookId}" class="btn btn-info">Delete</a>&nbsp;
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
