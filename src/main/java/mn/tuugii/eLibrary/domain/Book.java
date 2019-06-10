@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
 import java.time.LocalDate;
 
 @Entity
@@ -29,6 +30,7 @@ public class Book {
     private float fee;
 
     @Column(name="date_published")
+    @PastOrPresent
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     //@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate datePublished;
