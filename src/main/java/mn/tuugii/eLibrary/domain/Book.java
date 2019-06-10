@@ -29,7 +29,8 @@ public class Book {
     private float fee;
 
     @Column(name="date_published")
-    @DateTimeFormat(pattern = "MM/DD/YYYY")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    //@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate datePublished;
 
 }
