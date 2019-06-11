@@ -31,8 +31,8 @@ public class Book {
 
     @Column(name="date_published")
     @PastOrPresent
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    //@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    //@DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate datePublished;
 
 }
